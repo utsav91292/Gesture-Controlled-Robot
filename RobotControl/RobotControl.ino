@@ -1,17 +1,24 @@
  /* * RX is digital pin 2 (connect to TX of other device)
- * TX is digital pin 3 (connect to RX of other device) */
+ *    TX is digital pin 3 (connect to RX of other device)
+ *    We have used RF transmitter and receiver for 
+ *    transmitting and receiving the control signal.
+ *    We have used RKI-1198 and RKI-1197
+ *    for wireless communication.
+ *    RKI-1197 and RKI-1198 work on 2.4 GHz frequency.
+ */
+ 
 
 #include <SoftwareSerial.h>
 
 SoftwareSerial mySerial(16, 14); // RX, TX
 
 int z;
-int E1= 18;
-int IP1= 19;
-int IP2= 20;
-int E2= 21;
-int IP4= 22;
-int IP3= 23;
+int E1= 18;//Enable1
+int IP1= 19; //Motor1 Positive
+int IP2= 20; //Motor1 Negative
+int E2= 21;//Enable1
+int IP4= 22;//Motor1 Positive
+int IP3= 23;//Motor1 Negative
 
 int ME1= 2;
 int MIP1= 1;
