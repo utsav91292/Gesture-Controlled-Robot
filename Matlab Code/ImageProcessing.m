@@ -1,3 +1,5 @@
+% For setting up serial port 
+% As we are controlling our robot via RF
 s = serial('COM14');
 s.DataTerminalReady='Off';
 
@@ -292,7 +294,7 @@ c=sqrt((Rc1*Rc1)+(Rc2*Rc2)) ; % distance B/W red And blue
 
 %%
 
-%%%%%%%%%%%%%%Finding Ration for removing effect of depth%%%%%%%%%%
+%%%%%%%%%%%%%%Finding Ratio for removing effect of depth%%%%%%%%%%
 
  A=a/b
  B=b/c
@@ -370,13 +372,15 @@ a= 'r';
 
 else
    a= 's';
-   disp('STOPr')
+   disp('STOP')
 % elseif (A<0.40) && (A>0.25) && B<0.9 && B>0.75 && C>0.2 && C<0.3
 %     disp('stop') thumb on ring finger
 % imshow('right.jpg')
 % else
 %     disp('stop')
 end
+
+% Opening serial port and writing content to serial port
 fopen(s)
 fwrite(s,a);
 fclose(s);
